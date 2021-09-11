@@ -1,0 +1,58 @@
+easyblock = 'PythonPackage'
+
+name = 'SPARQLWrapper'
+version = '1.8.5'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://rdflib.dev/sparqlwrapper/'
+description = """This is a wrapper around a SPARQL service. It helps in creating the query URI and, possibly, convert the result into a more manageable format. """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['d6a66b5b8cda141660e07aeb00472db077a98d22cb588c973209c7336850fb3c']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    
+]
+unpack_sources = False
+options = {'modulename': 'SPARQLWrapper'}
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+  
+    ('rdflib', '5.0.0', {
+       'source_urls': ['https://pypi.python.org/packages/source/r/rdflib/'],
+       'checksums': ['78149dd49d385efec3b3adfbd61c87afaf1281c30d3fcaf1b323b34f603fb155'],
+    }),
+    ('isodate', '0.6.0', {
+       'source_urls': ['https://pypi.python.org/packages/source/i/isodate/'],
+        'checksums': ['2e364a3d5759479cdb2d37cce6b9376ea504db2ff90252a2e5b7cc89cc9ff2d8'],
+    }),
+     ('six', '1.16.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/six/'],
+        'checksums': ['1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926'],
+    }),
+     ('pyparsing', '2.4.7', {
+         'source_urls': ['https://pypi.python.org/packages/source/p/pyparsing/'],
+        'checksums': ['c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1'],
+    }),
+
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+easyblock = 'PythonPackage'
+
+name = 'dl-translate'
+version = '0.2.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/twisted'
+description = """Twisted is an event-based framework for internet applications, supporting Python 3.6+. It includes modules for many different purposes. """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['43844b638cd98027a09f7b415cad1f5206a8481c4fe2891424ce9a892ff62990']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('tqdm','4.60.0'),
+    ('PyTorch','1.7.1'),
+    ('transformers','4.9.2',versionsuffix),
+    ('protobuf','3.14.0','',('GCCcore','10.2.0')),
+    #('SentencePiece','0.1.96','',('GCCcore','10.2.0')),
+    ('packaging','20.9'),
+    ('scikit-learn','0.23.2'),
+    ('SciPy-bundle','2020.11'),
+    ('pyparsing','2.4.7'),
+    #('urllib3','1.22',versionsuffix),
+    ('PyYAML','5.3.1','',('GCCcore','10.2.0')),
+    ('typing-extensions','3.7.4.3','',('GCCcore','10.2.0')),
+    ('sacremoses','0.0.45',versionsuffix),
+    ('tokenizers','0.10.3'),
+    
+    
+
+    
+]
+unpack_sources = False
+
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+
+  ('certifi', '2020.6.20', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/certifi/'],
+        'checksums': ['5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3'],
+    }),
+    ('idna', '2.5', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/idna/'],
+        'checksums': ['3cb5ce08046c4e3a560fc02f138d0ac63e00f8ce5901a56b32ec8b7994082aab'],
+    }),
+    
+     ('six', '1.16.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/six/'],
+        'checksums': ['1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926'],
+    }),
+  ('requests', '2.25.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/r/requests/'],
+        'checksums': ['27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804'],
+    }),
+('huggingface_hub', '0.0.12', {
+        'source_urls': ['https://pypi.python.org/packages/source/h/huggingface-hub/'],
+        'checksums': ['661b17fab0c475276fd71603ee7e16c3b3d1d6e812e1b29f40144f64d361e59d'],
+    }),
+  ('urllib3', '1.26.6', {
+        'source_urls': ['https://pypi.python.org/packages/source/u/urllib3/'],
+        'checksums': ['f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f'],
+    }),    
+  ('camel_tools', '1.2.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/camel-tools/'],
+        'checksums': ['d5ca7ea27b40a74e7d60adf6e687978987246fd75bddd66ac2b0ca259007eaeb'],
+    }),
+
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+

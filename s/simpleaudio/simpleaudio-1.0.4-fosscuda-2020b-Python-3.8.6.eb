@@ -1,0 +1,35 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'simpleaudio'
+version = '1.0.4'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/hamiltron/py-simple-audio'
+description = """Core utilities for Python packages
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['691c88649243544db717e7edf6a9831df112104e1aefb5f6038a5d071e8cf41d']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('alsa-lib','1.2.4')
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('alsa-lib','1.2.4'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

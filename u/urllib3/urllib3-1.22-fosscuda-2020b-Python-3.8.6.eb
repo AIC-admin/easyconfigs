@@ -1,0 +1,29 @@
+easyblock = 'PythonPackage'
+
+name = 'urllib3'
+version = '1.22'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://urllib3.readthedocs.io/'
+description = """ No """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['cc44da8e1145637334317feebd728bd869a35285b93cbb4cca2577da7e62db4f']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+
+
+
+download_dep_fail = True
+use_pip = True
+#sanity_pip_check = True
+
+moduleclass = 'data'
+

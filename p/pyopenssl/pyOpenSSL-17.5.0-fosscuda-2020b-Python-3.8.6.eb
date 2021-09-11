@@ -1,0 +1,57 @@
+easyblock = 'PythonPackage'
+
+name = 'pyOpenSSL'
+version = '17.5.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/pyca/pyopenssl'
+description = """ A Python wrapper around the OpenSSL library """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['2c10cfba46a52c0b0950118981d61e72c1e5b1aac451ca1bc77de1a679456773']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('cryptography', '3.4.7'),
+    ('cffi', '1.14.5')
+    
+]
+unpack_sources = False
+options = {'modulename': 'dateutil'}
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    
+     ('six', '1.16.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/six/'],
+        'checksums': ['1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926'],
+    }),
+     ('pycparser', '2.20', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pycparser/'],
+        'checksums': ['2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0'],
+    }),
+   
+   
+   
+   
+
+
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+
+
+
+
+
+
+

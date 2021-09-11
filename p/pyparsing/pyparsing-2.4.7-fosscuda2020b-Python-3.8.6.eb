@@ -1,0 +1,32 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'pyparsing'
+version = '2.4.7'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'pyparsing'
+description = """Python parsing module"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

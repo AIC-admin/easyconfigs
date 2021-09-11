@@ -1,0 +1,25 @@
+easyblock = 'PythonBundle'
+
+name = 'read'
+version = '0.0.2'
+
+homepage = 'https://gitee.com/yanhuihang/read'
+description = """Read files faster.\n\n```python\nfrom read import read\n\ns = read('foo.txt')\n```\n\nSource:\n\n```python\ndef read(filename):\n\twith open(filename, encoding='utf-8') as f:\n\t\treturn f.read()\n```\n\n"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6')]
+
+
+use_pip = True
+unpack_sources = False
+exts_list = [
+   
+    (name, version, {
+        'source_tmpl': 'read-0.0.2-py3-none-any.whl',
+        'checksums': ['ef0b64ac38e796151e2ab22f743c90d285a2c3e3e6e6e7cfe3297e3312ade2e5'],
+    }),
+]
+
+
+moduleclass = 'tools'

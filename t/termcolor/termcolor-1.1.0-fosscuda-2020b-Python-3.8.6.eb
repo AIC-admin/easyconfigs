@@ -1,0 +1,28 @@
+easyblock = 'PythonPackage'
+
+name = 'termcolor'
+version = '1.1.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://pypi.python.org/pypi/termcolor'
+description = """."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['1d6d69ce66211143803fbc56652b41d73b4a400a2891d7bf7a1cdf4c02de613b']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

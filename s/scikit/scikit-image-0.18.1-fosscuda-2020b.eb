@@ -1,0 +1,45 @@
+#Creator: George(AIC)
+easyblock = 'PythonBundle'
+name = 'scikit-image'
+version = '0.18.1'
+homepage = 'https://scikit-image.org/'
+description = """scikit-image is a collection of algorithms for image processing."""
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+dependencies = [
+          ('Python', '3.8.6'),
+         ('matplotlib','3.3.3'),
+         ('scikit-learn','0.23.2'),
+         ('SciPy-bundle','2020.11'),
+         ('Pillow','8.0.1'),
+         ('pyparsing','2.4.7'),
+         ]
+sanity_check_commands = [('python', '-c "from skimage import data"')]
+use_pip = True
+sanity_pip_check=False
+exts_list = [
+      ("networkx", "2.5.1", {
+          'sources': ['https://files.pythonhosted.org/packages/b0/21/adfbf6168631e28577e4af9eb9f26d75fe72b2bb1d33762a5f2c425e6c2a/networkx-2.5.1.tar.gz'],
+          'checksums': ['109cd585cac41297f71103c3c42ac6ef7379f29788eb54cb751be5a663bb235a'],
+      }),
+     ("PyWavelets", "1.1.1", {
+         'sources': ['https://files.pythonhosted.org/packages/17/6b/ef989cfb3acff2ea966c5f28a7443ccaec2ee136675dfa0366db2635f78a/PyWavelets-1.1.1.tar.gz'],
+         'modulename': 'pywt',
+         'checksums': ['1a64b40f6acb4ffbaccce0545d7fc641744f95351f62e4c6aaa40549326008c9'],
+     }),
+     ("six", "1.16.0", {
+         'sources': ['https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz'],
+         'checksums': ['1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926'],
+     }),
+     ("tifffile", "2021.6.6", {
+          'sources': ['https://files.pythonhosted.org/packages/b0/5d/64ca26e55bdfe7744b68295a57ebc016b7ea1b72a9d7198f8319a79159f3/tifffile-2021.6.6.tar.gz'],
+          'checksums': ['aa6c2afb75378432856e2ecfba8cba347b6615b541bb71f1f83a9860ebe8fa70'],
+      }),
+     (name,version,{
+        'sources':['https://files.pythonhosted.org/packages/6e/be/a8ccf9d949a55023cf02438310e068c263ce3dd6bbf31f9229d3db6e551a/scikit-image-0.18.1.tar.gz'],
+        'modulename': 'skimage',
+        'checksums':['fbb618ca911867bce45574c1639618cdfb5d94e207432b19bc19563d80d2f171']
+        }),
+]
+#sanity_pip_check=True
+moduleclass = 'tools'
+

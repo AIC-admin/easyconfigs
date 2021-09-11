@@ -1,0 +1,31 @@
+easyblock = 'PythonPackage'
+
+local_original_name = 'pydensecrf'
+name = local_original_name
+version = '1.0rc3'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/lucasb-eyer/pydensecrf'
+description = """A python interface to Philipp Krähenbühl's fully-connected (dense) CRF code."""
+
+options = {'modulename': 'pydensecrf'}
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+sources = [{
+    'filename': local_original_name + '.tar.gz',
+    'git_config': {
+        'url': 'https://github.com/lucasb-eyer',
+        'repo_name': 'pydensecrf',
+        'tag': 'master',
+    },
+}]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+use_pip = True
+
+sanity_pip_check = True
+
+moduleclass = 'tools'

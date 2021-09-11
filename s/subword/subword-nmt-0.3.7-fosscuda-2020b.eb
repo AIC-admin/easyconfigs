@@ -1,0 +1,25 @@
+easyblock = 'PythonBundle'
+
+name = 'subword-nmt'
+version = '0.3.7'
+
+homepage = 'https://github.com/rsennrich/subword-nmt'
+description = """This repository contains preprocessing scripts to segment text into subword units.
+                                The primary purpose is to facilitate
+                                the reproduction of our experiments on Neural Machine Translation with subword units (see below for reference)."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6')]
+
+use_pip = True
+
+exts_list = [
+    (name, version, {
+        'source_urls': ['https://github.com/rsennrich/subword-nmt/archive/refs/tags/v0.3.7.tar.gz'],
+        'checksums': ['ea826329ce8c99066a5b1bae9b8abc5e71e72ccde00e3b5ba31c6de9f7572df8'],
+    }),
+]
+
+moduleclass = 'tools'
+

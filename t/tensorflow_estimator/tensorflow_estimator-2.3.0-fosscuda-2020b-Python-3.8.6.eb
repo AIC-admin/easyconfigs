@@ -1,0 +1,33 @@
+easyblock = 'PythonBundle'
+
+name = 'tensorflow_estimator'
+version = '2.4.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/tensorflow/estimator/tags'
+description = """TensorFlow Estimator is a high-level API that encapsulates model training,\nevaluation, prediction, and exporting"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+     ('TensorFlow','2.4.1')
+]
+
+unpack_sources = False
+
+
+exts_list = [
+     (name, version, {
+        'source_tmpl': 'tensorflow_estimator-2.4.0-py2.py3-none-any.whl',
+        'checksums': ['5b7b7bf2debe19a8794adacc43e8ba6459daa4efaf54d3302623994a359b17f0'],
+    }),
+]
+#download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'tools'
+

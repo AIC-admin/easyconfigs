@@ -1,0 +1,35 @@
+easyblock = 'PythonPackage'
+
+name = 'pyodbc'
+version = '4.0.31'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/seb-m/pyinotify'
+description = """ No description"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['89256e79d23415887cacf0a821f9f94baa5d833080521d456687d5e88c40c226']
+
+
+dependencies = [
+    ('Python', '3.8.6'),   
+ ('unixODBC','2.3.9' ),
+
+]
+unpack_sources = False
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+moduleclass = 'data'
+
+
+
+
+
+
+
+

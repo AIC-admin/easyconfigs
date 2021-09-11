@@ -1,0 +1,33 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'blinker'
+version = '1.4'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://pythonhosted.org/blinker/'
+description = """Fast, simple object-to-object and broadcast signaling"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['471aee25f3992bd325afa3772f1063dbdbbca947a041b8b89466dc00d606f8b6']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

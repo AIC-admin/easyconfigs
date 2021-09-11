@@ -1,0 +1,16 @@
+easyblock = 'PythonBundle'
+
+name = 'editdistance'
+version = '0.5.3'
+homepage = 'https://github.com/roy-ht/editdistance'
+description = """Fast implementation of the edit distance(Levenshtein distance)"""
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+dependencies = [('Python', '3.8.6')]
+use_pip = True
+exts_list = [
+	('editdistance', '0.5.3', {
+        'source_urls': ['https://pypi.python.org/packages/source/e/editdistance/'],
+        'checksums': ['89d016dda04649b2c49e12b34337755a7b612bfd690420edd50ab31787120c1f'],
+    }),
+]
+moduleclass = 'tools'

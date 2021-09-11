@@ -1,0 +1,33 @@
+#Author: George Nabil (AIC)
+
+easyblock = 'PythonPackage'
+
+name = 'SoundFile'
+version = '0.10.3.post1'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = ''
+description = """An audio library based on libsndfile, CFFI and NumPy"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['490cff42650733d1832728b937fe99fa1802896f5ef4d61bcf78cf7ebecb107b']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('cffi','1.14.5')
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('cffi','1.14.5')
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

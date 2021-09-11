@@ -1,0 +1,78 @@
+easyblock = 'PythonBundle'
+
+name = 'Flask'
+version = '1.1.2'
+
+homepage = 'https://www.palletsprojects.com/p/flask/'
+description = """
+Flask is a lightweight WSGI web application framework. It is designed to make
+getting started quick and easy, with the ability to scale up to complex
+applications.
+This module includes the Flask extensions: Flask-Cors"""
+
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('APScheduler','3.7.0','-fosscuda-2020b-Python-3.8.6',True),
+    ('scikit-learn','0.23.2','-fosscuda-2020b',True),
+    ('SciPy-bundle','2020.11','-fosscuda-2020b',True),
+    ('aniso8601','9.0.1','-fosscuda-2020b-Python-3.8.6',True),
+]
+
+builddependencies = [('binutils', '2.35')]
+
+use_pip = True
+sanity_pip_check = True
+
+exts_list = [
+     ('itsdangerous', '1.1.0', {
+        'checksums': ['321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19'],
+     }),
+     ('Werkzeug', '1.0.1', {
+        'checksums': ['6c80b1e5ad3665290ea39320b91e1be1e0d5f60652b964a3070216de83d2e47c'],
+     }),
+     ('SQLAlchemy','1.4.22',{
+        'checksums':['ec1be26cdccd60d180359a527d5980d959a26269a2c7b1b327a1eea0cab37ed8'],
+     }),
+     ('MarkupSafe','2.0.1',{
+        'checksums':['594c67807fb16238b30c44bdf74f36c02cdf22d1c8cda91ef8a0ed8dabf5620a'],
+     }),
+     (name, version, {
+        'checksums': ['4efa1ae2d7c9865af48986de8aeb8504bf32c7f3d6fdc9353d34b21f4b127060'],
+     }),
+     ('Flask-Cors', '3.0.9', {
+        'checksums': ['6bcfc100288c5d1bcb1dbb854babd59beee622ffd321e444b05f24d6d58466b8'],
+     }),
+     ('colorhash','1.0.3', {
+        'checksums':['1cca7226210c70b7afb7730293a73260d7b493ac327c3bf51fdbc7f3f3da38bb'],
+     }),
+     ('configparser','5.0.2', {
+        'checksums':['85d5de102cfe6d14a5172676f09d19c465ce63d6019cf0a4ef13385fc535e828'],
+     }),
+     ('greenlet','1.1.0',{
+         'checksums':['c87df8ae3f01ffb4483c796fe1b15232ce2b219f0b18126948616224d3f658ee'],
+     }),
+     ('Jinja2','2.11.1', {
+         'checksums':['93187ffbc7808079673ef52771baa950426fd664d3aad1d0fa3e95644360e250'],
+     }),
+     ('psutil','5.8.0', {
+         'checksums':['0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6'],
+     }),
+      ('Flask-MonitoringDashboard','3.1.0', {
+          'checksums':['5da9678fe881d43ae4dc4fa6cc35d980589276d2cb73629d3ed44f0c8e3725e8'],
+     }),
+      ('Flask-RESTful','0.3.9', {
+          'checksums':['ccec650b835d48192138c85329ae03735e6ced58e9b2d9c2146d6c84c06fa53e'],
+     }),
+]
+
+sanity_check_paths = {
+    'files': ['bin/flask'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+sanity_check_commands = ['flask --version']
+
+moduleclass = 'lib'
+

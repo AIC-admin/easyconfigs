@@ -1,0 +1,51 @@
+#Creator: George(AIC)
+easyblock = 'PythonBundle'
+name = 'datasets'
+version = '1.11.0'
+versionsuffix = '-Python-%(pyver)s'
+homepage = 'https://github.com/huggingface/datasets'
+description = """HuggingFace/Datasets is an open library of NLP datasets."""
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+dependencies = [
+         ('Python', '3.8.6'),
+         ('scikit-learn','0.23.2'),
+         ('SciPy-bundle','2020.11'),
+	 ('packaging','20.9'),
+	 ('CMake','3.18.4'),
+	 ('pyarrow','4.0.1')
+         ]
+sanity_check_commands = [('python', '-c "import transformers"')]
+use_pip = True
+sanity_pip_check=False
+exts_list = [
+      ("twine", "3.4.2", {
+          'sources': ['https://files.pythonhosted.org/packages/19/a8/2277f24ce422d820378c1fd49bc0d5dc89d99761f184693fba5a2f283174/twine-3.4.2.tar.gz'],
+          'checksums': ['4caec0f1ed78dc4c9b83ad537e453d03ce485725f2aea57f1bb3fdde78dae936'],
+      }),
+	("fsspec", "2021.7.0", {
+          'sources': ['https://files.pythonhosted.org/packages/af/82/f93a6a6ad077465f88a6af0107e4db3ddbccaf13402cf135ac9e3c84669c/fsspec-2021.7.0.tar.gz'],
+          'checksums': ['792ebd3b54de0b30f1ce73f0ba0a8bcc864724f2d9f248cb8d0ece47db0cbde8'],
+      }),
+     ("huggingface_hub", "0.0.15", {
+         'checksums': ['b2be42a78f12bf1f9b7cc85a0a219ba067ac092311d5a9abee850b7b62bfc8ab'],
+     }),
+     ("tqdm", "4.62.1", {
+         'checksums': ['35540feeaca9ac40c304e916729e6b78045cbbeccd3e941b2868f09306798ac9'],
+     }),
+     ("arrow", "1.1.1", {
+         'checksums': ['dee7602f6c60e3ec510095b5e301441bc56288cb8f51def14dcb3079f623823a'],
+     }),
+	(name, version, {
+           'checksums': ['3b01bf12951903e83b528d41129876426eb3a5fbcaf2645552283330528c92bf'],
+     }),
+        ("multiprocess", "0.70.9", {
+           'checksums': ['9fd5bd990132da77e73dec6e9613408602a4612e1d73caf2e2b813d2b61508e5'],
+     }),
+        ("xxhash", "2.0.2", {
+           'checksums': ['b7bead8cf6210eadf9cecf356e17af794f57c0939a3d420a00d87ea652f87b49'],
+     }),
+
+
+]
+#sanity_pip_check=True
+moduleclass = 'tools'

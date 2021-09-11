@@ -1,0 +1,65 @@
+easyblock = 'PythonBundle'
+
+name = 'farasapy'
+version = '0.0.9'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/MagedSaeed/farasapy'
+description = """Farasa is an Arabic NLP toolkit """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('PyYAML', '5.3.1','',('GCCcore','10.2.0')),  # required for jupyter_nbextensions_configurator
+    ('SciPy-bundle', '2020.11'),
+    ('PyTorch', '1.7.1'),
+]
+
+use_pip = True
+
+exts_list = [
+
+      
+       ('requests', '2.24.0', {
+        'checksums': ['b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b'],
+    }),
+    ('tqdm', '4.50.2', {
+        'checksums': ['69dfa6714dee976e2425a9aab84b622675b7b1742873041e3db8a8e86132a4af'],
+    }),
+    
+  ('chardet', '3.0.4', {
+        'checksums': ['84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae'],
+    }),
+ 
+
+
+
+     ('certifi', '2020.6.20', {
+        'checksums': ['5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3'],
+    }),
+
+
+
+     ('urllib3', '1.25.11', {
+        'checksums': ['8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2'],
+    }),
+
+
+ ('idna', '2.10', {
+        'checksums': ['b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6'],
+    }),
+
+
+ 
+     ('farasapy', version, {
+        'modulename': 'farasa',
+        'checksums': ['09d87572eee6837d70f22480191b86aa8dc5a3c0a664596e6b6cfd9347c4844d'],
+    }),
+   
+]
+
+
+sanity_pip_check = True
+
+moduleclass = 'tools'

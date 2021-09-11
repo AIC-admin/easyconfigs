@@ -1,0 +1,31 @@
+#Creator: Amr Magdy
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'cachetools'
+version = '4.4.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/tkem/cachetools/'
+description = """This module provides various memoizing collections and decorators, including variants of the Python Standard Library’s @lru_cache function decorator"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['61b5ed1e22a0924aed1d23b478f37e8d52549ff8a961de2909c69bf950020cff']
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+#sanity_check_commands = [('python', '-c "import camel-tools"')]
+
+moduleclass = 'data'
+

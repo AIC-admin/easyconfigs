@@ -1,0 +1,34 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'httplib2'
+version = '0.19.1'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/httplib2/httplib2'
+description = """A comprehensive HTTP client library."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['0b12617eeca7433d4c396a100eaecfa4b08ee99aa881e6df6e257a7aad5d533d']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('pyparsing', '2.4.7'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

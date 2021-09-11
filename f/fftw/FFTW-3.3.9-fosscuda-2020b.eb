@@ -1,0 +1,30 @@
+easyblock = 'CMakeMake'
+
+name = 'FFTW'
+version = '3.3.9'
+
+homepage = 'http://www.fftw.org/'
+description = "FFTW-3.3.9"
+toolchain = {'name': 'gompic', 'version': '2020b'}
+
+sources = ['http://www.fftw.org/fftw-3.3.9.tar.gz']
+#checksums = ['58a6f4277ca2bc8565222b3bbd58a177609e9c488e8a72649359ba51450db7d8']
+
+builddependencies = [
+    ('CMake', '3.18.4'),
+    ('OpenMPI','4.0.5'),
+    ('Boost','1.71.0'),
+    ('XZ','5.2.5'),
+    ('libpciaccess','0.16'),
+    ('zlib','1.2.11'),
+]
+
+separate_build_dir = True
+
+sanity_check_paths = {
+    'files': ['lib64/libfftw3.so.3.6.9'],
+    'dirs': ['include','lib64'],
+}
+
+moduleclass = 'lib'
+

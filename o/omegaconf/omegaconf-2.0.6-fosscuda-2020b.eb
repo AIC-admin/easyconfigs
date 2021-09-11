@@ -1,0 +1,36 @@
+#Author: George Nabil (AIC)
+
+easyblock = 'PythonPackage'
+
+name = 'omegaconf'
+version = '2.0.6'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/omry/omegaconf'
+description = """OmegaConf is a hierarchical configuration system, with support for merging configurations from multiple sources (YAML config files, dataclasses/objects and CLI arguments) providing a consistent API regardless of how the configuration was created."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['92ca535a788d21651bf4c2eaf5c1ca4c7a8003b2dab4a87cbb09109784268806']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('cffi','1.14.5'),
+    ('PyYAML','5.3.1'),
+    ('typing-extensions','3.7.4.3')
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('PyYAML','5.3.1'),
+    ('typing-extensions','3.7.4.3')
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

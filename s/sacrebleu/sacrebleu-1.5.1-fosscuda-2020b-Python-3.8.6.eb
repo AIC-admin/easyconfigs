@@ -1,0 +1,27 @@
+
+# Creator: Amr Magdy
+easyblock = 'PythonBundle'
+name = 'sacrebleu'
+version = '1.5.1'
+homepage = 'https://github.com/mjpost/sacrebleu'
+description = """sacreBLEU (Post, 2018) provides hassle-free computation of shareable, comparable, and reproducible BLEU scores"""
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+dependencies = [
+        ('Python', '3.8.6'),]
+use_pip = True
+#options = {'modulename': 'comet_ml'}
+sanity_pip_check=True
+#sanity_check_commands = [('python', '-c "import comet_ml"')]
+exts_list = [
+      ("portalocker", "2.0.0", {
+          'sources': ['https://files.pythonhosted.org/packages/df/48/62cf97ff7d2233e7db29dfb83f1584e26289e88af8af39de1a76629ac487/portalocker-2.0.0.tar.gz'],
+      }),
+        (name, version, {
+         'sources': ['https://files.pythonhosted.org/packages/fb/b1/145f754099689f9efe1525753c63eb81c97c9329add30385360af9256b72/sacrebleu-1.5.1.tar.gz'],
+         'checksums': ['e8184f0d2ec45dd7ef0883fbce3976b2b7cf581e04d0854ac5f7eb394318b84b'],
+              }),
+
+]
+#sanity_pip_check=True
+moduleclass = 'tools'
+

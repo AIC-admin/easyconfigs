@@ -1,0 +1,28 @@
+
+easyblock = 'PythonPackage'
+
+name = 'moses'
+version = '0.10.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/l04m33/moses'
+description = """ Moses 是一个使用加密连接的 Socks5 代理，原理与 ShadowSocks 一致， 不过加密方法换成了 TLS, 支持服务端、客户端双向验证，更安全，不过连接 速度也更慢 $"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['e3a1068099d9bb9768e71380f452e18c4f523b7c95208ba1e8f123d3af6dfce7']
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

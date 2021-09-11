@@ -1,0 +1,29 @@
+easyblock = 'PythonPackage'
+
+name = 'PyJWT'
+version = '1.5.3'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/jpadilla/pyjwt'
+description = """  PyJWT\n=====\n\n.. image:: https://github.com/jpadilla/pyjwt/workflows/CI/badge.svg\n   :target: https://github.com/jpadilla/pyjwt/actions?query=workflow%3ACI\n\n.. image:: https://img.shields.io/pypi/v/pyjwt.svg\n   :target: https://pypi.python.org/pypi/pyjwt\n\n.. image:: https://codecov.io/gh/jpadilla/pyjwt/branch/master/graph/badge.svg\n   :target: https://codecov.io/gh/jpadilla/pyjwt\n\n.. image:: https://readthedocs.org/projects/pyjwt/badge/?version=stable\n   :target: https://pyjwt.readthedocs.io/en/stable/\n\nA Python implementation of `RFC 7519 <https://tools.ietf.org/html/rfc7519>`_. Original implementation was written by `@progrium <https://github.com/progrium>`_.\n\nSponsor\n-------\n\n+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n| |auth0-logo| | If you want to quickly add secure token-based authentication to Python projects, feel free to check Auth0's Python SDK and free plan at `auth0.com/developers <https://auth0.com/developers?utm_source=GHsponsor&utm_medium=GHsponsor&utm_campaign=pyjwt&utm_content=auth>`_. |\n+--------------+-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n\n.. |auth0-logo| image:: https://user-images.githubusercontent.com/83319/31722733-de95bbde-b3ea-11e7-96bf-4f4e8f915588.png\n\nInstalling\n----------\n\nInstall with **pip**:\n\n.. code-block:: console\n\n    $ pip install PyJWT\n\n\nUsage\n-----\n\n.. code-block:: pycon\n\n    >>> import jwt\n    >>> encoded = jwt.encode({\"some\": \"payload\"}, \"secret\", algorithm=\"HS256\")\n    >>> print(encoded)\n    eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzb21lIjoicGF5bG9hZCJ9.Joh1R2dYzkRvDkqv3sygm5YyK8Gi4ShZqbhK2gxcs2U\n    >>> jwt.decode(encoded, \"secret\", algorithms=[\"HS256\"])\n    {'some': 'payload'}\n\nDocumentation\n-------------\n\nView the full docs online at https://pyjwt.readthedocs.io/en/stable/\n\n\nTests\n-----\n\nYou can run tests from the project root after cloning with:\n\n.. code-block:: console\n\n    $ tox\n\n\n """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['500be75b17a63f70072416843dc80c8821109030be824f4d14758f114978bae7']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+options = {'modulename': 'jwt'}
+
+
+#download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

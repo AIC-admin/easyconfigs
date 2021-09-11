@@ -1,0 +1,29 @@
+easyblock = 'PythonPackage'
+
+name = 'psutil'
+version = '5.8.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/giampaolo/psutil'
+description = """A cross-platform process and system utilities module for Python"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_SOURCE]
+sources = [SOURCE_TAR_GZ]
+checksums = ['0c9ccb99ab76025f2f0bbecf341d4656e9c1351db8cc8a03ccd62e318ab4b5c6']
+
+use_pip = True
+download_dep_fail = True
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+sanity_check_paths = {
+    'files': [],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'lib'
+

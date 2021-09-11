@@ -1,0 +1,80 @@
+easyblock = 'PythonBundle'
+
+name = 'pytest'
+version = '6.2.3'
+
+homepage = 'http://pytest.org'
+description = """pytest: simple powerful testing with Python"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6')]
+
+use_pip = True
+
+exts_list = [
+    ('py', '1.10.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/py/'],
+        'checksums': ['21b81bda15b66ef5e1a777a21c4dcd9c20ad3efd0b3f817e7a809035269e1bd3'],
+    }),
+    ('attrs', '20.3.0', {
+        'modulename': 'attr',
+        'source_urls': ['https://pypi.python.org/packages/source/a/attrs/'],
+        'checksums': ['832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700'],
+    }),
+    ('pluggy', '0.13.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pluggy/'],
+        'checksums': ['15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0'],
+    }),
+    ('atomicwrites', '1.4.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/a/atomicwrites/'],
+        'checksums': ['ae70396ad1a434f9c7046fd2dd196fc04b12f9e91ffb859164193be8b6168a7a'],
+    }),
+    ('more-itertools', '8.7.0', {
+        'modulename': 'more_itertools',
+        'source_urls': ['https://pypi.python.org/packages/source/m/more-itertools/'],
+        'checksums': ['c5d6da9ca3ff65220c3bfd2a8db06d698f05d4d2b9be57e1deb2be5a45019713'],
+    }),
+    ('scandir', '1.10.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/scandir/'],
+        'checksums': ['4d4631f6062e658e9007ab3149a9b914f3548cb38bfb021c64f39a025ce578ae'],
+    }),
+    ('pathlib2', '2.3.5', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pathlib2/'],
+        'checksums': ['6cd9a47b597b37cc57de1c05e56fb1a1c9cc9fab04fe78c29acd090418529868'],
+    }),
+    
+    ('iniconfig', '1.1.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/iniconfig/'],
+        'checksums': ['bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32'],
+    }),
+     ('pluggy', '0.13.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pluggy/'],
+        'checksums': ['15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0'],
+    }),
+    
+     ('toml', '0.10.2', {
+        'source_urls': ['https://pypi.python.org/packages/source/t/toml/'],
+        'checksums': ['b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f'],
+    }),
+    ('six', '1.15.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/six/'],
+        'checksums': ['30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259'],
+    }),
+    
+    ('pyparsing', '2.4.7', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pyparsing/'],
+        'checksums': ['c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1'],
+    }),
+    (name, version, {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pytest/'],
+        'checksums': ['671238a46e4df0f3498d1c3270e5deb9b32d25134c99b7d75370a68cfbe9b634'],
+    }),
+]
+
+sanity_check_paths = {
+    'files': ['bin/pytest'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'tools'

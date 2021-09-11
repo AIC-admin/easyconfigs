@@ -1,0 +1,37 @@
+easyblock = 'PythonPackage'
+
+name = 'pyinotify'
+version = '0.9.6'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/seb-m/pyinotify'
+description = """ No description"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['9c998a5d7606ca835065cdabc013ae6c66eb9ea76a00a1e3bc6e0cfe2b4f71f4']
+
+builddependencies = [
+    ('Python', '3.8.6'),    
+]
+
+
+dependencies = [
+    ('Python', '3.8.6'),    
+]
+unpack_sources = False
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+moduleclass = 'data'
+
+
+
+
+
+
+
+

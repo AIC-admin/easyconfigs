@@ -1,0 +1,39 @@
+easyblock = 'PythonPackage'
+
+name = 'yarl'
+version = '1.6.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/python-excel/xlrd'
+description = """xlrd is a library for reading data and formatting information from Excel files in the historical .xls format."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['61d3ea3c175fe45f1498af868879c6ffeb989d4143ac542163c45538ba5ec21b']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    ('idna', '2.6', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/idna/'],
+        'checksums': ['2c6a5de3089009e3da7c5dde64a141dbc8551d5b7f6cf4ed7c2568d0cc520a8f'],
+    }),
+      ('multidict', '5.1.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/m/multidict/'],
+        'checksums': ['25b4e5f22d3a37ddf3effc0710ba692cfc792c2b9edfb9c05aefe823256e84d5'],
+    }),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

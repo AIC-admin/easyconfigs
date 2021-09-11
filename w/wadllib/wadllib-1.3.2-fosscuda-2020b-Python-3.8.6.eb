@@ -1,0 +1,34 @@
+easyblock = 'PythonPackage'
+
+name = 'wadllib'
+version = '1.3.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/python-excel/xlrd'
+description = """xlrd is a library for reading data and formatting information from Excel files in the historical .xls format."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['140e43fc16d4352a98a90a450c6326bee5e6de73ae373a569947f3b505405034']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    ('lazr.uri', '1.0.5', {
+'source_urls': ['https://pypi.python.org/packages/source/l/lazr.uri/'],
+        'checksums': ['f36e7e40d5f8f2cf20ff2c81784a14a546e6c19c216d40a6617ebe0c96c92c49'],
+    }),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

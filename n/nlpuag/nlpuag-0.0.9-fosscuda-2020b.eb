@@ -1,0 +1,27 @@
+easyblock = 'PythonBundle'
+
+name = 'nlpaug'
+version = '0.0.9'
+
+homepage = 'https://pypi.org/project/nlpaug/'
+description = """Accurately remove and replace emojis in text strings"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6'),
+  ('PyTorch', '1.7.1'),
+    ('scikit-learn','0.23.2'),
+     ('SciPy-bundle', '2020.11')]
+
+use_pip = True
+
+exts_list = [
+   
+    (name, version, {
+        'source_urls': ['https://pypi.python.org/packages/source/n/nlpaug/'],
+        'checksums': ['50da3e9e68f1d03efef41c845521cbfe813cb896169269ac3a8fafe1b6bec897'],
+    }),
+]
+
+
+moduleclass = 'tools'

@@ -1,0 +1,118 @@
+easyblock = 'PythonBundle'
+
+name = 'ltp'
+version = '4.1.4'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/HIT-SCIR/ltp'
+description = """  LTP（Language Technology Platform） 提供了一系列中文自然语言处理工具，用户可以使用这些工具对于中文文本进行分词、词性标注、句法分析等等工作。 """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('PyYAML', '5.3.1','',('GCCcore','10.2.0')),  # required for jupyter_nbextensions_configurator
+    ('SciPy-bundle', '2020.11'),
+    ('PyTorch', '1.7.1'),
+]
+
+use_pip = True
+
+exts_list = [
+
+     ('setuptools', '56.0.0', {
+        'checksums': ['08a1c0f99455307c48690f00d5c2ac2c1ccfab04df00454fef854ec145b81302'],
+    }),
+
+     ('semantic_version', '2.8.5', {
+        'checksums': ['d2cb2de0558762934679b9a104e82eca7af448c9f4974d1f3eeccff651df8a54'],
+    }),
+    ('regex', '2020.10.15', {
+        'checksums': ['d25f5cca0f3af6d425c9496953445bf5b288bb5b71afc2b8308ad194b714c159'],
+    }),
+   
+    ('pygtrie', '2.4.2', {
+        'checksums': ['43205559d28863358dbbf25045029f58e2ab357317a59b11f11ade278ac64692'],
+    }),
+    
+    ('tqdm', '4.50.2', {
+        'checksums': ['69dfa6714dee976e2425a9aab84b622675b7b1742873041e3db8a8e86132a4af'],
+    }),
+    
+    ('six', '1.15.0', {
+        'checksums': ['30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259'],
+    }),
+    ('joblib', '0.17.0', {
+        'checksums': ['9e284edd6be6b71883a63c9b7f124738a3c16195513ad940eae7e3438de885d5'],
+    }),
+    ('click', '7.1.2', {
+        'checksums': ['d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a'],
+    }),
+      ('sacremoses', '0.0.35', {
+        'checksums': ['1e84da95cbdbfc8bbc148c0feb5a4737c5d9757071b79e8c1129e449410e410a'],
+    }),
+
+       ('transformers', '4.5.1', {
+        'checksums': ['3508e3b032cf0f5342c67836de4b121aa5c435c959472a28054ba895ea59cca7'],
+    }),
+   
+
+       ('requests', '2.24.0', {
+        'checksums': ['b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b'],
+    }),
+ ('setuptools-rust', '0.12.1', {
+        'checksums': ['647009e924f0ae439c7f3e0141a184a69ad247ecb9044c511dabde232d3d570e'],
+    }),
+      ('tokenizers', '0.10.2', {
+        'source_tmpl': 'tokenizers-0.10.2-cp38-cp38-manylinux2010_x86_64.whl',
+        'unpack_sources': False,
+        'checksums': ['f1553e029f326eb74f36d67a38ef77a7f03068a494a0faa4e16d0d832f25b760'],
+    }),
+
+        ('filelock', '3.0.12', {
+        'checksums': ['18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59'],
+    }),
+
+
+        ('packaging', '20.4', {
+        'checksums': ['4357f74f47b9c12db93624a82154e9b120fa8293699949152b22065d556079f8'],
+    }),
+
+     ('certifi', '2020.6.20', {
+        'checksums': ['5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3'],
+    }),
+
+
+
+     ('urllib3', '1.25.11', {
+        'checksums': ['8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2'],
+    }),
+
+
+ ('idna', '2.10', {
+        'checksums': ['b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6'],
+    }),
+
+
+ ('chardet', '3.0.4', {
+        'checksums': ['84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae'],
+    }),
+    
+
+('pyparsing', '2.4.7', {
+        'checksums': ['c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1'],
+    }),
+    ('typing_extensions', '3.7.4.3', {
+        'checksums': ['99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c'],
+    }),
+     ('ltp', version, {
+        'modulename': 'ltp',
+        'checksums': ['da1631afa03cf44457a50de3099f4f21dde8b3980913ca8538b999d755f132ad'],
+    }),
+   
+]
+
+
+sanity_pip_check = True
+
+moduleclass = 'tools'

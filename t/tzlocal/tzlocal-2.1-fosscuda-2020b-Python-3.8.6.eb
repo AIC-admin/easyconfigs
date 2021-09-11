@@ -1,0 +1,36 @@
+easyblock = 'PythonPackage'
+
+name = 'tzlocal'
+version = '2.1'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/regebro/tzlocal'
+description = """This Python module returns a ``tzinfo`` object with the local timezone information under Unix and Win-32."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['643c97c5294aedc737780a49d9df30889321cbe1204eac2c2ec6134035a92e44']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    ('pytz', '2021.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/p/pytz/'],
+        'checksums': ['83a4a90894bf38e243cf052c8b58f381bfe9a7a483f6a9cab140bc7f702ac4da'],
+    }),
+     
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

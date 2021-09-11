@@ -1,0 +1,29 @@
+easyblock = 'PythonPackage'
+
+name = 'xcffib'
+version = '0.5.1'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/python-excel/xlrd'
+description = """xlrd is a library for reading data and formatting information from Excel files in the historical .xls format."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['c0f8daf5375df1df2dbccd1066f464831cf3dd69d58dd851ada8d85d72b5eb25']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+
+
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

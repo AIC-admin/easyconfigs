@@ -1,0 +1,42 @@
+easyblock = 'PythonPackage'
+
+name = 'PyCairo'
+version = '1.16.2'
+
+homepage = 'https://pycairo.readthedocs.io/'
+description = """Python bindings for the cairo library"""
+
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
+
+sources = [SOURCELOWER_TAR_GZ]
+checksums = ['49a3cf8737c009852e97289d43e952bf228d8df53a7ddb840d4deeb4d0cc1ea7']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('cairo', '1.16.0'),
+]
+
+# PyGTK needs PyCairo installed by pip
+use_pip = True
+sanity_pip_check = True
+download_dep_fail = True
+
+# remove pyproject.toml, which causes trouble (header files and .pc file are not installed)
+#preinstallopts = "rm pyproject.toml && "
+
+# Don't build a wheel or the pkg-cfg file won't be installed
+installopts = '--no-binary=%(namelower)s'
+
+sanity_check_paths = {
+    'files': ['%s/py3cairo.%s' % (p, e) for (p, e) in [('include/pycairo', 'h'), ('lib/pkgconfig', 'pc')]],
+    'dirs': ['lib/python%(pyshortver)s/site-packages/cairo'],
+}
+
+options = {'modulename': 'cairo'}
+
+moduleclass = 'vis'

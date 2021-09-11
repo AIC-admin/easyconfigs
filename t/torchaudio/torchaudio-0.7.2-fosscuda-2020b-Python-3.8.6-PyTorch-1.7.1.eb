@@ -1,0 +1,26 @@
+easyblock = 'PythonPackage'
+
+name = 'torchaudio'
+version = '0.7.2'
+#versionsuffix = '-Python-%(pyver)s-PyTorch-1.4.0'
+
+homepage = 'https://github.com/pytorch/audio'
+description = """ Data manipulation and transformation for audio signal
+processing, powered by PyTorch """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+sources = ['https://github.com/pytorch/audio/archive/refs/tags/v0.7.2.tar.gz']
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle', '2020.11'),
+    ('PyTorch', '1.7.1',),
+    ('SoX', '14.4.2','',('GCC','10.2.0')),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'tools'

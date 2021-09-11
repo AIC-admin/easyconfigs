@@ -1,0 +1,33 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'aniso8601'
+version = '9.0.1'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://bitbucket.org/nielsenb/aniso8601'
+description = """A library for parsing ISO 8601 strings."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['72e3117667eedf66951bb2d93f4296a56b94b078a8a95905a052611fb3f1b973']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

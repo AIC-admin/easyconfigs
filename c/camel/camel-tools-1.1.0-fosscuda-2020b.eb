@@ -1,0 +1,36 @@
+#Creator: Amr Magdy
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'camel-tools'
+version = '1.1.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/CAMeL-Lab/CAMeL_Tools'
+description = """CAMeL Tools is suite of Arabic natural language processing tools developed by the CAMeL Lab at New York University $
+
+Please use GitHub Issues to report a bug or if you need help using CAMeL Tools."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['https://files.pythonhosted.org/packages/06/23/331ce904926a8d53a527aac34bfe03fffb9fd1d4597924cbcd65432a53ef/camel_tools-1.1.0.tar.gz']
+checksums = ['63d23688c73792075c303f785a7c1b503646c3b374069aa27001acaaf5415a66']
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('cachetools', '4.4.2', versionsuffix ),
+    ('scikit-learn','0.23.2'),
+    ('SciPy-bundle', '2020.11'), 
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+#sanity_check_commands = [('python', '-c "import camel-tools"')]
+
+moduleclass = 'data'
+

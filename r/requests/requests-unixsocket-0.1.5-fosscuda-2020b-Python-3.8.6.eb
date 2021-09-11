@@ -1,0 +1,63 @@
+easyblock = 'PythonPackage'
+
+name = 'requests-unixsocket'
+version = '0.1.5'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/pyca/pyopenssl'
+description = """ A Python wrapper around the OpenSSL library """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['a91bc0138f61fb3396de6358fa81e2cd069a150ade5111f869df01d8bc9d294c']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+
+    
+]
+unpack_sources = False
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    
+     ('urllib3', '1.26.6', {
+        'source_urls': ['https://pypi.python.org/packages/source/u/urllib3/'],
+        'checksums': ['f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f'],
+    }),
+     ('requests', '2.26.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/r/requests/'],
+        'checksums': ['b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7'],
+    }),
+     ('certifi', '2021.5.30', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/certifi/'],
+        'checksums': ['2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee'],
+    }),
+     ('charset-normalizer', '2.0.4', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/charset-normalizer/'],
+        'checksums': ['f23667ebe1084be45f6ae0538e4a5a865206544097e4e8bbcacf42cd02a348f3'],
+    }),
+   
+   
+   
+   
+
+
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+
+
+
+
+
+
+

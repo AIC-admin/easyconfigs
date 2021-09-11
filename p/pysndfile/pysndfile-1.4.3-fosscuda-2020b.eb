@@ -1,0 +1,29 @@
+#Author: George Nabil (AIC)
+
+easyblock = 'PythonPackage'
+
+name = 'pysndfile'
+version = '1.4.3'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://forge-2.ircam.fr/roebel/pysndfile'
+description = """pysndfile is a python package providing PySndfile, a Cython wrapper class around libsndfile. PySndfile provides methods for reading and writing a large variety of soundfile formats on a variety of plattforms. PySndfile provides a rather complete access to the different sound file manipulation options that are available in libs"""
+
+toolchain= {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['1ee72f8ade9d86842e94ad5cc5b0e41ad1eca8cee2b5889af8b0123a0016f901']
+
+dependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('Python', '3.8.6'),   
+    ('SciPy-bundle','2020.11'),
+    ('libsndfile','1.0.28'),  
+]
+download_dep_fail = True
+use_pip = True
+#sanity_pip_check = True
+sanity_check_commands = [('python', '-c "import pysndfile"')]
+moduleclass = 'lib'

@@ -1,0 +1,28 @@
+easyblock = 'PythonPackage'
+
+name = 'zope.interface'
+version = '4.0.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/zopefoundation/zope.interface'
+description = """This package provides an implementation of “object interfaces” for Python. Interfaces are a mechanism for labeling objects as conforming to a given API or contract. So, this package can be considered as implementation of the Design By Contract methodology support in Python.."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['bb786e346185362337db032bcc85e4e1d45cbe032a6d487ecd6d167d6382b826']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

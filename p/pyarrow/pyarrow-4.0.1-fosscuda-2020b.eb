@@ -1,0 +1,25 @@
+easyblock = 'PythonBundle'
+
+name = 'pyarrow'
+version = '4.0.1'
+
+homepage = 'https://pypi.org/project/demoji/'
+description = """Accurately remove and replace emojis in text strings"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6'),
+     ('SciPy-bundle', '2020.11')]
+
+use_pip = True
+unpack_sources = False
+exts_list = [
+   
+    (name, version, {
+        'source_tmpl': 'pyarrow-4.0.1-cp38-cp38-manylinux2014_x86_64.whl',
+        'checksums': ['c2733c9bcd00074ce5497dd0a7b8a10c91d3395ddce322d7021c7fdc4ea6f610'],
+    }),
+]
+
+
+moduleclass = 'tools'

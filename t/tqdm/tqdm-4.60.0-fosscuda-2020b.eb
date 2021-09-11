@@ -1,0 +1,33 @@
+#Creator: Amr Magdy
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'tqdm'
+version = '4.60.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/tqdm/tqdm'
+description = """tqdm derives from the Arabic word taqaddum (تقدّم) which can mean “progress,” and is an abbreviation for “I love you so much” in Spanish (te quiero$
+
+Instantly make your loops show a smart progress meter - just wrap any iterable with tqdm(iterable), and you’re done!
+
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['ebdebdb95e3477ceea267decfc0784859aa3df3e27e22d23b83e9b272bf157ae']
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

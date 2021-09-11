@@ -1,0 +1,17 @@
+name = 'stb'
+version = '20210401'
+
+homepage = 'https://github.com/nothings/stb'
+description = "single-file public domain (or MIT licensed) libraries for C/C++"
+toolchain = SYSTEM
+easyblock = 'Tarball'
+source_urls = ['https://github.com/nothings/stb/archive/refs/heads/master.zip']
+sources = ['https://github.com/nothings/stb/archive/refs/heads/master.zip']
+sanity_check_paths = {
+    'files': ['stb_connected_components.h', 'stb_image.h','stb_include.h'],
+    'dirs': ['data','deprecated']
+}
+modextrapaths= {
+'stb_INCLUDE_DIRS' : 'stb/20210401/'
+}
+moduleclass = 'lib'

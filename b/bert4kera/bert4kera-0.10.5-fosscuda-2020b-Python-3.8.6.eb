@@ -1,0 +1,26 @@
+easyblock = 'PythonPackage'
+
+name = 'bert4keras'
+version = '0.10.5'
+
+homepage = 'https://github.com/bojone/bert4keras'
+description = """ light reimplement of bert for keras."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+sources = [SOURCE_TAR_GZ]
+checksums = ['4997484d0ccf3b1f9f7b7d500eca01dae9db13bfffaab30fcf068bf659b5405e']
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle', '2020.11'),
+    ('Keras','2.3.1')
+]
+
+
+use_pip = True
+download_dep_fail = True
+sanity_pip_check = True
+
+
+moduleclass = 'math'

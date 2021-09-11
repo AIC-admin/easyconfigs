@@ -1,0 +1,38 @@
+
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonBundle'
+
+name = 'APScheduler'
+version = '3.7.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/agronholm/apscheduler'
+description = """In-process task scheduler with Cron-like capabilities"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+exts_list = [
+     ('tzlocal', '2.1', {
+         'checksums': ['643c97c5294aedc737780a49d9df30889321cbe1204eac2c2ec6134035a92e44'],
+     }),
+     (name, version, {
+         'checksums': ['1cab7f2521e107d07127b042155b632b7a1cd5e02c34be5a28ff62f77c900c6a'],
+}),
+]
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

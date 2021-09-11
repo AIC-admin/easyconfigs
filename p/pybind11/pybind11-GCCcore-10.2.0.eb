@@ -1,0 +1,35 @@
+
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'pybind11'
+version = '2.6.2'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/pybind/pybind11'
+description = """Core utilities for Python packages
+"""
+
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['d0e0aed9279656f21501243b707eb6e3b951e89e10c3271dedf3ae41c365e5ed']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

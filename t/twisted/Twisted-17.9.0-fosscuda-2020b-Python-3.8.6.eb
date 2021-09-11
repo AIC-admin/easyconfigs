@@ -1,0 +1,72 @@
+easyblock = 'PythonPackage'
+
+name = 'Twisted'
+version = '17.9.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/twisted'
+description = """Twisted is an event-based framework for internet applications, supporting Python 3.6+. It includes modules for many different purposes. """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.bz2']
+checksums = ['0da1a7e35d5fcae37bc9c7978970b5feb3bc82822155b8654ec63925c05af75c']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    
+]
+unpack_sources = False
+
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    ('Automat', '20.2.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/a/Automat/'],
+        'checksums': ['7979803c74610e11ef0c0d68a2942b152df52da55336e0c9d58daf1831cbdf33'],
+    }),
+
+       ('constantly', '15.1.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/constantly/'],
+        'checksums': ['586372eb92059873e29eba4f9dec8381541b4d3834660707faf8ba59146dfc35'],
+    }),
+      ('hyperlink', '19.0.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/h/hyperlink/'],
+        'checksums': ['4288e34705da077fada1111a24a0aa08bb1e76699c9ce49876af722441845654'],
+    }),
+     ('incremental', '16.10.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/incremental/'],
+        'checksums': ['14ad6b720ec47aad6c9caa83e47db1843e2b9b98742da5dda08e16a99f400342'],
+    }),
+     ('zope.interface', '5.4.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/z/zope.interface/'],
+        'checksums': ['5dba5f530fec3f0988d83b78cc591b58c0b6eb8431a85edd1569a0539a8a5a0e'],
+    }),
+    ('idna', '2.5', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/idna/'],
+        'checksums': ['3cb5ce08046c4e3a560fc02f138d0ac63e00f8ce5901a56b32ec8b7994082aab'],
+    }),
+     ('setuptools', '57.4.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/setuptools/'],
+        'checksums': ['6bac238ffdf24e8806c61440e755192470352850f3419a52f26ffe0a1a64f465'],
+    }),
+     ('six', '1.16.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/six/'],
+        'checksums': ['1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926'],
+    }),
+     ('attrs', '21.2.0', {
+        'modulename': 'attr',
+        'source_urls': ['https://pypi.python.org/packages/source/a/attrs/'],
+        'checksums': ['ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb'],
+    }),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+

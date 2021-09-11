@@ -1,0 +1,30 @@
+easyblock = 'PythonBundle'
+
+name = 'deepspeed'
+version = '0.3.16'
+
+versionsuffix = '-PyTorch-%s' % '1.7.1'
+
+homepage = 'https://github.com/microsoft/DeepSpeed'
+description = """s a deep learning optimization library that makes distributed training easy, efficient, and effective."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6'),
+  ('PyTorch', '1.7.1'),
+    ('scikit-learn','0.23.2'),
+     ('SciPy-bundle', '2020.11'),
+     ('tensorboardX','2.1','-PyTorch-1.7.1')]
+
+use_pip = True
+
+exts_list = [
+   
+    (name, version, {
+        'source_urls': ['https://pypi.python.org/packages/source/d/deepspeed/'],
+        'checksums': ['3fe047a0991daac8413ffe694534da2178665467c4f0b428ffffa9e5ba7e888f'],
+    }),
+]
+
+
+moduleclass = 'tools'

@@ -1,0 +1,39 @@
+easyblock = 'PythonBundle'
+
+name = 'Transformers'
+version = '4.9.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/huggingface/transformers'
+description = """
+State-of-the-art Natural Language Processing for PyTorch and TensorFlow 2.0"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle', '2020.11'),
+    ('tqdm', '4.60.0'),
+]
+
+use_pip = True
+
+exts_list = [
+    ('regex', '2020.4.4', {
+        'checksums': ['295badf61a51add2d428a46b8580309c520d8b26e769868b922750cf3ce67142'],
+    }),
+    ('sacremoses', '0.0.43', {
+        'checksums': ['123c1bf2664351fb05e16f87d3786dbe44a050cfd7b85161c09ad9a63a8e2948'],
+    }),
+    ('tokenizers', '0.10.3', {
+        'checksums': ['1a5d3b596c6d3a237e1ad7f46c472d467b0246be7fd1a364f12576eb8db8f7e6'],
+    }),
+    (name, version, {
+        'source_tmpl': '%(namelower)s-%(version)s.tar.gz',
+        'checksums': ['ad79b0e4a9c9bfedbaaf5a36e8266bea69ab0437187f83ede602ef222d26d9d7'],
+    }),
+]
+
+sanity_pip_check = True
+
+moduleclass = 'math'

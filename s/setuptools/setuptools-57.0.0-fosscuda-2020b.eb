@@ -1,0 +1,28 @@
+easyblock = 'PythonBundle'
+
+name = 'setuptools'
+version = '57.0.0'
+
+homepage = 'https://pypi.org/project/setuptools/'
+description = """Accurately remove and replace emojis in text strings"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6'),
+  ('PyTorch', '1.7.1'),
+    ('scikit-learn','0.23.2'),
+     ('SciPy-bundle', '2020.11')]
+
+use_pip = True
+
+exts_list = [
+
+    (name, version, {
+        'source_urls': ['https://pypi.python.org/packages/source/s/setuptools/'],
+        'checksums': ['401cbf33a7bf817d08014d51560fc003b895c4cdc1a5b521ad2969e928a07535'],
+    }),
+]
+
+
+moduleclass = 'tools'
+

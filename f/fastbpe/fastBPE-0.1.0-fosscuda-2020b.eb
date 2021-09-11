@@ -1,0 +1,31 @@
+easyblock = 'PythonPackage'
+
+name = 'fastBPE'
+version = '0.1.0'
+versionsuffix = '-Python-%(pyver)s'
+#modaltsoftname = 'fastbpe'
+homepage = 'https://github.com/glample/fastBPE'
+description = """C++ implementation of Neural Machine Translation of Rare Words with Subword Units, with Python API."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_SOURCE]
+sources = [SOURCE_TAR_GZ]
+checksums = [
+    '95eef4be2689e822a918ac4eae3349cd78ca3f28af591afa421f8fac6d4cd889'
+]
+
+use_pip = True
+download_dep_fail = True
+sanity_pip_check = True
+
+options = {'modulename': 'fastBPE'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle','2020.11'),
+]
+
+moduleclass = 'tools'
+
+

@@ -1,0 +1,50 @@
+easyblock = 'PythonBundle'
+
+name = 'demoji'
+version = '0.4.0'
+
+homepage = 'https://pypi.org/project/demoji/'
+description = """Accurately remove and replace emojis in text strings"""
+
+toolchain = {'name': 'foss', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6')]
+
+use_pip = True
+
+exts_list = [
+    ('certifi', '2020.6.20', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/certifi/'],
+        'checksums': ['5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3'],
+    }),
+    
+    ('idna', '2.10', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/idna/'],
+        'checksums': ['b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6'],
+    }),
+     ('urllib3', '1.25.11', {
+        'source_urls': ['https://pypi.python.org/packages/source/u/urllib3/'],
+        'checksums': ['8d7eaa5a82a1cac232164990f04874c594c9453ec55eef02eab885aa02fc17a2'],
+    }),
+    
+     ('chardet', '3.0.4', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/chardet/'],
+        'checksums': ['84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae'],
+    }),
+    ('colorama', '0.4.4', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/colorama/'],
+        'checksums': ['5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b'],
+    }),
+    
+    ('requests', '2.25.1', {
+        'source_urls': ['https://pypi.python.org/packages/source/r/requests/'],
+        'checksums': ['27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804'],
+    }),
+    (name, version, {
+        'source_urls': ['https://pypi.python.org/packages/source/d/demoji/'],
+        'checksums': ['172bd6e4f7e9dcb5dec537dcf353d0bf79fe0422189c405e4d4b97368af3d38e'],
+    }),
+]
+
+
+moduleclass = 'tools'

@@ -1,0 +1,61 @@
+# Creator: Amr Magdy
+easyblock = 'PythonBundle'
+name = 'py7zr'
+version = '0.16.1'
+homepage = 'https://github.com/miurahr/py7zr'
+description = """py7zr is a library and utility to support 7zip archive compression, decompression, encryption and decryption written by Python programming language."""
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
+dependencies = [
+        ('Python', '3.8.6'),]
+use_pip = True
+#options = {'modulename': 'comet_ml'}
+#sanity_pip_check=True
+#sanity_check_commands = [('python', '-c "import comet_ml"')]
+exts_list = [
+    ("pyzstd", "0.15.1", {
+         'sources': ['https://files.pythonhosted.org/packages/ca/77/84e0fac0c3b2acbef0284d559914812157c60ad17cd74a38da4d9767d1ae/pyzstd-0.15.0.tar.gz'],
+         'checksums': ['bf15a39cb3c9b662775e22ffa8c4da09fdde6a15ece5e0ed710b6d3b4329cf36'],
+     }),
+      ("Brotli", "1.0.9", {
+          'sources': ['https://files.pythonhosted.org/packages/2a/18/70c32fe9357f3eea18598b23aa9ed29b1711c3001835f7cf99a9818985d0/Brotli-1.0.9.zip'],
+          'checksums': ['4d1b810aa0ed773f81dceda2cc7b403d01057458730e309856356d4ef4188438'],
+      }),
+     ("bcj-cffi", "0.5.1", {
+         'sources': ['https://files.pythonhosted.org/packages/97/9c/681442a5b3a5bb3a1210a8ddc6cc6f6a47ea90834b80daa15af767b1c29a/bcj-cffi-0.5.1.tar.gz'],
+         'modulename': 'bcj',
+         'checksums': ['2b4a5d1252e72bea5a5eb1e51650435825299b0e87c25ddfd21a1623514fd0cc'],
+     }),
+     ("pycryptodome", "3.10.1", {
+         'sources': ['https://files.pythonhosted.org/packages/88/7f/740b99ffb8173ba9d20eb890cc05187677df90219649645aca7e44eb8ff4/pycryptodome-3.10.1.tar.gz'],
+         'modulename': 'Crypto',
+         'checksums': ['3e2e3a06580c5f190df843cdb90ea28d61099cf4924334d5297a995de68e4673'],
+     }),
+     ("multivolumefile", "0.2.3", {
+          'sources': ['https://files.pythonhosted.org/packages/50/f0/a7786212b5a4cb9ba05ae84a2bbd11d1d0279523aea0424b6d981d652a14/multivolumefile-0.2.3.tar.gz'],
+          'checksums': ['a0648d0aafbc96e59198d5c17e9acad7eb531abea51035d08ce8060dcad709d6'],
+      }),
+        ("pycparser", "2.20", {
+          'sources': ['https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz'],
+          'checksums': ['2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0'],
+      }),
+        ("texttable", "1.6.4", {
+           'sources': ['https://files.pythonhosted.org/packages/d5/78/dbc2a5eab57a01fedaf975f2c16f04e76f09336dbeadb9994258aa0a2b1a/texttable-1.6.4.tar.gz'],
+           'checksums': ['42ee7b9e15f7b225747c3fa08f43c5d6c83bc899f80ff9bae9319334824076e9'],
+       }),
+        ("pyppmd", "0.15.1", {
+           'sources': ['https://files.pythonhosted.org/packages/13/64/967dd714e2efd331185a2b2fb489b56940acc1aaa4fb5a66135ce0269542/pyppmd-0.15.1.tar.gz'],
+           'checksums': ['a3c95b687b45aa24c240a537326cf57166b693de0a93e1cbc789233ee21912aa'],
+       }),
+        (name, version, {
+         'sources': ['https://files.pythonhosted.org/packages/5c/06/65626f8150a33fd6d5cccf43392e3324ce23e03061fad611a050fe7f1fb0/py7zr-0.16.1.tar.gz'],
+         'checksums': ['0ab402f73fc8cc41f2a5523436ae53dec6ff612597d9168ed80cfa1574d27fe0'],
+              }),
+        ("pycryptodomex","3.10.1",{
+         'sources':['https://files.pythonhosted.org/packages/82/e2/a0f9f5452a59bafaa3420585f22b58a8566c4717a88c139af2276bb5695d/pycryptodomex-3.10.1.tar.gz'],
+         'modulename': 'Crypto',
+         'checksums': ['541cd3e3e252fb19a7b48f420b798b53483302b7fe4d9954c947605d0a263d62'],
+})
+]
+#sanity_pip_check=True
+moduleclass = 'tools'
+

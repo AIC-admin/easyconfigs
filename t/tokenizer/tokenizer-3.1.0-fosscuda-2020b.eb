@@ -1,0 +1,44 @@
+easyblock = 'PythonPackage'
+
+name = 'tokenizer'
+version = '3.1.0'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/mideind/Tokenizer'
+description = """Tokenizer can do both deep and shallow tokenization.
+
+Shallow tokenization simply returns each sentence as a string (or as a line of text in an output file), where the individual tokens are separated by spaces.
+
+Deep tokenization returns token objects that have been annotated with the token type and further information extracted from the token, for example a (year, month, $
+
+In shallow tokenization, tokens are in most cases kept intact, although consecutive white space is always coalesced. The input strings "800 MW", "21. janúar" and "$
+
+In deep tokenization, the same strings are represented by single token objects, of type TOK.MEASUREMENT, TOK.DATEREL and TOK.TELNO, respectively. The text associat$
+
+By default, the command line tool performs shallow tokenization. If you want deep tokenization with the command line tool, use the --json or --csv switches.
+
+From Python code, call split_into_sentences() for shallow tokenization, or tokenize() for deep tokenization. These functions are documented with examples below."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['3833c4681d6715fbb909c5c2777fd84e3c71e799260477c6f8946f9093a6b72e']
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+
+
+
+
+

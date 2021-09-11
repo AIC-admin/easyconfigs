@@ -1,0 +1,29 @@
+#Author = Amr Magdy
+easyblock = 'PythonBundle'
+
+name = 'multidict'
+version = '4.7.6'
+
+homepage = 'https://github.com/aio-libs/multidict'
+description = """ Multidict is dict-like collection of key-value pairs where key might be occurred more than once in the container.
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+use_pip = True
+sanity_pip_check = True
+
+exts_list = [
+    (name, version, {
+        'checksums': ['fbb77a75e529021e7c4a8d4e823d88ef4d23674a202be4f5addffc72cbb91430'],
+    }),
+]
+
+#sanity_check_commands = ['python -c "import multidict"']
+
+moduleclass = 'lib'
+

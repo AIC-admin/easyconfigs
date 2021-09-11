@@ -1,0 +1,33 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'jsonpointer'
+version = '1.1'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/stefankoegl/python-json-pointer'
+description = """Identify specific nodes in a JSON document (RFC 6901)
+"""
+
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['a0fe333840d5191f14592ce9fc791bae57546564680a1aef5657edf88f29c366']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('setuptools', '57.0.0','-fosscuda-2020b',True),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+

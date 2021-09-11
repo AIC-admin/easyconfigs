@@ -1,0 +1,32 @@
+
+easyblock = 'PythonBundle'
+
+name = 'gensim'
+version = '4.0.1'
+
+homepage = 'https://radimrehurek.com/gensim'
+description = """Gensim is a Python library for topic modelling, document indexing and similarity retrieval with
+ large corpora."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle', '2020.11'),  # for numpy, pandas
+]
+
+use_pip = True
+
+exts_list = [
+    ('smart_open', '5.1.0', {
+        'checksums': ['e4dc1350b240ef0759e343e4e2f361bfd4e5477bb2619866e97f80240652e92e'],
+    }),
+    (name, version, {
+        'checksums': ['b4d0b9562796968684028e06635e0f7aff39ffb33719057fd1667754ea09a6e4'],
+    }),
+]
+
+sanity_pip_check = True
+
+moduleclass = 'lib'
+

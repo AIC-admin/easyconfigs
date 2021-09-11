@@ -1,0 +1,47 @@
+easyblock = 'PythonBundle'
+
+name = 'tf-sentencepiece'
+version = '0.1.90'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/seb-m/pyinotify'
+description = """ No description"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+options = {'modulename': 'tf_sentencepiece'}
+dependencies = [
+    ('Python', '3.8.6'),
+    ('TensorFlow','2.4.1'),
+]
+
+
+
+exts_list = [
+    (name, version, {
+        'source_tmpl' : 'tf_sentencepiece-0.1.90-py2.py3-none-manylinux1_x86_64.whl',
+        'checksums' : ['47ce1eda33a45b89b89fe3877a33d2e3d00a4bcd4e0b96e102bbfeea749eec3b']
+    }),
+]
+
+unpack_sources = False
+
+#download_dep_fail = True
+
+use_pip = True
+
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+
+
+
+
+
+
+
+
+
+
+

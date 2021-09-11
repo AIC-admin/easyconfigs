@@ -1,0 +1,33 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'jsonpatch'
+version = '1.16'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/stefankoegl/python-json-patch'
+description = """Apply JSON-Patches (RFC 6902)"""
+
+toolchain = {'name': 'GCCcore', 'version': '10.2.0'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['f025c28a08ce747429ee746bb21796c3b6417ec82288f8fe6514db7398f2af8a']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('jsonpointer', '2.1'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('jsonpointer', '2.1'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+

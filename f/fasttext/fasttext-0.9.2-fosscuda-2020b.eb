@@ -1,0 +1,30 @@
+easyblock = 'PythonPackage'
+
+name = 'fasttext'
+version = '0.9.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/facebookresearch/fastText'
+description = """fastText is a library for efficient learning of word representations and sentence classification.
+
+In this document we present how to use fastText in python."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_SOURCE]
+sources = [SOURCE_TAR_GZ]
+checksums = [
+    '665556f1f6dcb4fcbe25fa8ebcd4f71b18fa96a090de09d88d97a60cbd29dcb5'
+]
+
+use_pip = True
+download_dep_fail = True
+sanity_pip_check = True
+#sanity_check_commands = [('python', '-c "import fasttext"')]
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle','2020.11'),
+]
+
+moduleclass = 'data'
+

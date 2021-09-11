@@ -1,0 +1,58 @@
+easyblock = 'PythonBundle'
+
+name = 'laserembeddings'
+version = '1.1.1'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/yannvgn/laserembeddings'
+description = """laserembeddings is a pip-packaged, production-ready port of Facebook Research's LASER (Language-Agnostic SEntence Representations) to compute multilingual sentence embeddings."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('PyYAML', '5.3.1','',('GCCcore','10.2.0')),  # required for jupyter_nbextensions_configurator
+    ('SciPy-bundle', '2020.11'),
+    ('PyTorch', '1.7.1'),
+    ('subword-nmt','0.3.7'),
+]
+
+use_pip = True
+
+exts_list = [
+    ('transliterate', '1.10.2', {
+        'checksums': ['bc608e0d48e687db9c2b1d7ea7c381afe0d1849cad216087d8e03d8d06a57c85'],
+    }),
+   
+    ('sacremoses', '0.0.35', {
+        'checksums': ['1e84da95cbdbfc8bbc148c0feb5a4737c5d9757071b79e8c1129e449410e410a'],
+    }),
+
+    ('tqdm', '4.50.2', {
+        'checksums': ['69dfa6714dee976e2425a9aab84b622675b7b1742873041e3db8a8e86132a4af'],
+    }),
+    
+    ('six', '1.15.0', {
+        'checksums': ['30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259'],
+    }),
+    ('joblib', '0.17.0', {
+        'checksums': ['9e284edd6be6b71883a63c9b7f124738a3c16195513ad940eae7e3438de885d5'],
+    }),
+    ('click', '7.1.2', {
+        'checksums': ['d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a'],
+    }),
+  ('typing_extensions', '3.7.4.3', {
+        'checksums': ['99d4073b617d30288f569d3f13d2bd7548c3a7e4c8de87db09a9d29bb3a4a60c'],
+    }),
+    ('laserembeddings', version, {
+        'modulename': 'laserembeddings',
+        'checksums': ['399a1e42bdde329f70b5b25ee7703ebfa1ec3eee3fedbda061edb0e3f89e307b'],
+    }),
+    
+   
+]
+
+
+sanity_pip_check = True
+
+moduleclass = 'tools'

@@ -1,0 +1,33 @@
+#Author: George Nabil (AIC)
+
+easyblock = 'PythonPackage'
+
+name = 'cffi'
+version = '1.14.5'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = ''
+description = """Foreign Function Interface for Python calling C code.
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['fd78e5fee591709f32ef6edb9a015b4aa1a5022598e36227500c8f4e02328d9c']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('pycipher','0.5.2')
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

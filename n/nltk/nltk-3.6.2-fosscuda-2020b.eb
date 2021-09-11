@@ -1,0 +1,27 @@
+easyblock = 'PythonPackage'
+
+name = 'nltk'
+version = '3.6.2'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://www.nltk.org/'
+description = """The Natural Language Toolkit (NLTK) is a Python package for natural language processing. NLTK requires Python 3.5, 3.6, 3.7, 3.8, or 3.9."""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_SOURCE]
+sources = [SOURCE_ZIP]
+checksums = [
+    '57d556abed621ab9be225cc6d2df1edce17572efb67a3d754630c9f8381503eb'
+]
+
+use_pip = True
+download_dep_fail = True
+sanity_pip_check = True
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('tqdm', '4.60.0'),
+]
+
+moduleclass = 'data'

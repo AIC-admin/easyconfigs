@@ -1,0 +1,25 @@
+easyblock = 'PythonBundle'
+
+name = 'PyArabic'
+version = '0.6.10'
+
+homepage = 'https://github.com/linuxscout/pyarabic'
+description = """Accurately remove and replace emojis in text strings"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [('Python', '3.8.6'),
+]
+
+use_pip = True
+
+exts_list = [
+   
+    (name, version, {
+        'source_urls': ['https://pypi.python.org/packages/source/p/PyArabic/'],
+        'checksums': ['4c32a3080a304afd9c3897e0968e3d93a5ea62b32495b90bc4943f004f165287'],
+    }),
+]
+
+
+moduleclass = 'tools'

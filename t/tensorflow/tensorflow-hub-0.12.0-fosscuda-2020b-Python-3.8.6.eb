@@ -1,0 +1,37 @@
+easyblock = 'PythonBundle'
+
+name = 'tensorflow_hub'
+version = '0.12.0'
+
+homepage = 'https://github.com/tensorflow/hub'
+description = """ no """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+      ('SciPy-bundle', '2020.11'),
+      ('protobuf','3.10.0','',('GCCcore','10.2.0')),
+      ('TensorFlow','2.4.1')
+      ]
+
+
+use_pip = True
+unpack_sources = False
+
+exts_list = [
+   
+     ('six', '1.16.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/s/six/'],
+        'checksums': ['1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926'],
+    }),
+    (name, version, {
+        
+        'source_tmpl': 'tensorflow_hub-0.12.0-py2.py3-none-any.whl',
+        'checksums': ['822fe5f7338c95efcc3a534011c6689e4309ba2459def87194179c4de8a6e1fc'],
+    }),
+]
+sanity_pip_check = True
+
+
+moduleclass = 'tools'

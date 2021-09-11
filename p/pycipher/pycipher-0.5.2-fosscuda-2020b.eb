@@ -1,0 +1,33 @@
+#Author: George (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'pycipher'
+version = '0.5.2'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/jameslyons/pycipher'
+description = """Python bindings for libcypher-parser.
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.zip']
+checksums = ['e5b3b3ef734604da09e1642f9c496a75df850668aee5b18818a3988eec4cd71b']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+#sanity_pip_check = True
+sanity_check_commands = [('python', '-c "import pycipher"')]
+moduleclass = 'data'

@@ -1,0 +1,36 @@
+#648e038f4fc9255525f03b2494534527e7339dd07Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'accelerate'
+version = '0.4.0'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/pypa/packaging'
+description = """Core utilities for Python packages
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['4f1c5153ab855943662b02a648e038f4fc9255525f03b2494534527e7339dd07']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('setuptools','57.0.0'),
+    ('PyTorch','1.7.1'),
+    ('PyYAML','5.3.1')
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

@@ -1,0 +1,41 @@
+#creator: George(AIC)
+easyblock = 'PythonBundle'
+name = 'transformers'
+version = '4.6.1'
+versionsuffix = '-Python-%(pyver)s'
+local_fosschain='-foss-2020b-Python-3.8.6'
+homepage = 'https://github.com/huggingface/transformers'
+description = """tate-of-the-art Natural Language Processing for Jax, PyTorch and TensorFlow"""
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+dependencies = [
+         ('Python', '3.8.6'),
+         ('matplotlib','3.3.3'),
+         ('scikit-learn','0.23.2'),
+         ('SciPy-bundle','2020.11'),
+         ('pyparsing','2.4.7'),
+         ('packaging','20.9'),
+         ('sacremoses','0.0.45',versionsuffix),
+         ('tokenizers','0.10.3')
+         ]
+sanity_check_commands = [('python', '-c "import transformers"')]
+use_pip = True
+sanity_pip_check=False
+exts_list = [
+      ("click", "8.0.1", {
+          'sources': ['https://files.pythonhosted.org/packages/21/83/308a74ca1104fe1e3197d31693a7a2db67c2d4e668f20f43a2fca491f9f7/click-8.0.1.tar.gz'],
+          'checksums': ['8c04c11192119b1ef78ea049e0a6f0463e4c48ef00a30160c704337586f3ad7a'],
+      }),
+     ("huggingface-hub", "0.0.10", {
+         'sources': ['https://files.pythonhosted.org/packages/bb/0b/9e65a86433cad0800ff20bfd3d903b502a77e99b59b0a71852b546fda418/huggingface_hub-0.0.10.tar.gz'],
+         'checksums': ['556765e4c7edd2d2c4c733809bae1069dca20e10ff043870ec40d53e498efae2'],
+     }),
+        (name, version, {
+           'sources': ['https://files.pythonhosted.org/packages/91/1d/c5b468531de2e67ecbf7ef0bdccbd6449539e635c6b4a179a1c00407d4fd/transformers-4.6.1.tar.gz'],
+           'checksums': ['83dbff763b7e7dc57cbef1a6b849655d4fcab6bffdd955c5e8bea12a4f76dc10'],
+       }),
+
+
+]
+#sanity_pip_check=True
+moduleclass = 'tools'
+

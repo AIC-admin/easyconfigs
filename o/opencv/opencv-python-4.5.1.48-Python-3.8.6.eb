@@ -1,0 +1,36 @@
+#Author: George Nabil (AIC)
+
+easyblock = 'PythonPackage'
+
+name = 'opencv-python'
+version = '4.5.1.48'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/lukemelas/EfficientNet-PyTorch'
+description = """Core utilities for Python packages
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['https://files.pythonhosted.org/packages/bb/08/9dbc183a3ac6baa95fabf749ddb531bd26256edfff5b6c2195eca26258e9/opencv-python-4.5.1.48.tar.gz']
+checksums = ['78a6db8467639383caedf1d111da3510a4ee1a0aacf2117821cae2ee8f92ce37']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('CMake','3.18.4')
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle', '2020.11'),
+    ('scikit-build','0.11.1')
+]
+options = {'modulename': 'cv2'}
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+

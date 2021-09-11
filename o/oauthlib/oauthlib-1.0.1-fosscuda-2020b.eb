@@ -1,0 +1,28 @@
+#Author = Amr Magdy
+easyblock = 'PythonBundle'
+
+name = 'oauth'
+version = '1.0.1'
+
+homepage = 'https://github.com/aio-libs/multidict'
+description = """ """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+use_pip = True
+sanity_pip_check = True
+
+exts_list = [
+    (name, version, {
+        'checksums': ['e769819ff0b0c043d020246ce1defcaadd65b9c21d244468a45a7f06cb88af5d'],
+    }),
+]
+
+#sanity_check_commands = ['python -c "import multidict"']
+
+moduleclass = 'lib'
+

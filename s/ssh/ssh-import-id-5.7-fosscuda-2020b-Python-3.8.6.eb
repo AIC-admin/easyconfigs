@@ -1,0 +1,54 @@
+easyblock = 'PythonPackage'
+
+name = 'ssh-import-id'
+version = '5.7'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://launchpad.net/ssh-import-id'
+description = """ NO """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['2a7f3c9b02f1b1a62e47329fdd3dba301ef55a9f3fb390538c9b06198a5914c6']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    
+]
+unpack_sources = False
+
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    ('requests', '2.26.0', {
+        'source_urls': ['https://pypi.python.org/packages/source/r/requests/'],
+        'checksums': ['b8aa58f8cf793ffd8782d3d8cb19e66ef36f7aba4353eec859e74678b01b07a7'],
+    }),
+    ('charset-normalizer', '2.0.3', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/charset-normalizer/'],
+        'checksums': ['c46c3ace2d744cfbdebceaa3c19ae691f53ae621b39fd7570f59d14fb7f2fd12'],
+    }),
+     ('urllib3', '1.26.6', {
+        'source_urls': ['https://pypi.python.org/packages/source/u/urllib3/'],
+        'checksums': ['f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f'],
+    }),
+('idna', '3.2', {
+        'source_urls': ['https://pypi.python.org/packages/source/i/idna/'],
+        'checksums': ['467fbad99067910785144ce333826c71fb0e63a425657295239737f7ecd125f3'],
+    }),
+    ('certifi', '2021.5.30', {
+        'source_urls': ['https://pypi.python.org/packages/source/c/certifi/'],
+        'checksums': ['2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee'],
+    }),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+

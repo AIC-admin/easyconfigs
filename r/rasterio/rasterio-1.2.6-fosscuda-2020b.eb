@@ -1,0 +1,64 @@
+easyblock = 'PythonBundle'
+
+name = 'rasterio'
+version = '1.2.6'
+
+homepage = 'https://github.com/mapbox/rasterio'
+description = "Rasterio reads and writes geospatial raster data."
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('SciPy-bundle', '2020.11'),  # for numpy
+    ('matplotlib', '3.3.3'),
+    ('GDAL', '3.2.1'),
+]
+
+use_pip = True
+
+exts_list = [
+    ('affine', '2.3.0', {
+        'checksums': ['2e045def1aa29e613c42e801a7e10e0b9bacfed1a7c6af0cadf8843530a15102'],
+    }),
+    ('jmespath', '0.10.0', {
+        'checksums': ['b85d0567b8666149a93172712e68920734333c0ce7e89b78b3e987f71e5ed4f9'],
+    }),
+    ('botocore', '1.21.31', {
+        'checksums': ['58cd315e2ae0971acdb3d7cda9c9c36b41c73181f41943a7443812d6d3c9ad18'],
+    }),
+    ('s3transfer', '0.5.0', {
+        'checksums': ['50ed823e1dc5868ad40c8dc92072f757aa0e653a192845c94a3b676f4a62da4c'],
+    }),
+    ('boto3', '1.18.31', {
+        'checksums': ['59445d0e1d55c8c9675697ea41c98a0d82089a4be3076ea60e3a87cbe94dc141'],
+    }),
+    ('click-plugins', '1.1.1', {
+        'checksums': ['46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b'],
+    }),
+    ('cligj', '0.7.1', {
+        'checksums': ['b2f1f7247d59a5387bd3013a08b9ed6829e96fafa4a6e6292341efdb46fe6220'],
+    }),
+    ('snuggs', '1.4.7', {
+        'checksums': ['501cf113fe3892e14e2fee76da5cd0606b7e149c411c271898e6259ebde2617b'],
+    }),
+    (name, version, {
+        'checksums': ['24975b97fe2fc3fd282d59640baab19de431448e1b23be6b85b68fecc1362f88'],
+    }),
+]
+
+fix_python_shebang_for = ['bin/jp.py', 'bin/rio']
+
+sanity_check_paths = {
+    'files': ['bin/rio'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+sanity_check_commands = [
+    "jp.py --help",
+    "rio --help",
+]
+
+sanity_pip_check = True
+
+moduleclass = 'geo'

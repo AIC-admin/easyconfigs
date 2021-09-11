@@ -1,0 +1,32 @@
+
+
+easyblock = 'PythonPackage'
+
+name = 'sacremoses'
+version = '0.0.45'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/alvations/sacremoses'
+description = """"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['58176cc28391830789b763641d0f458819bebe88681dac72b41a19c0aedc07e9']
+
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('tqdm','4.60.0'),
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
+
+

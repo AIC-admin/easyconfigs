@@ -1,0 +1,102 @@
+easyblock = 'PythonBundle'
+
+name = 'Transformers'
+version = '4.5.1'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/huggingface/transformers'
+description = """
+State-of-the-art Natural Language Processing for PyTorch and TensorFlow 2.0"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+dependencies = [
+    ('Python', '3.8.6'), 
+]
+unpack_sources = False
+
+use_pip = True
+
+exts_list = [
+    ('filelock', '3.0.12', {
+       
+        'source_tmpl': 'filelock-3.0.12-py3-none-any.whl',
+        'checksums': ['929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836'],
+
+    }),
+    ('tqdm', '4.61.0', {
+        'source_tmpl': 'tqdm-4.61.0-py2.py3-none-any.whl',
+        'checksums': ['736524215c690621b06fc89d0310a49822d75e599fcd0feb7cc742b98d692493'],
+  }),
+     ('packaging', '20.9', {
+      'source_tmpl': 'packaging-20.9-py2.py3-none-any.whl',
+        'checksums': ['67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a'],
+    }),
+     ('pyparsing', '2.4.7', {
+      'source_tmpl': 'pyparsing-2.4.7-py2.py3-none-any.whl',
+        'checksums': ['ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b'],
+    }),
+     ('requests', '2.25.1', {
+      'source_tmpl': 'requests-2.25.1-py2.py3-none-any.whl',
+        'checksums': ['c210084e36a42ae6b9219e00e48287def368a26d03a048ddad7bfee44f75871e'],
+    }),
+    ('regex', '2021.4.4', {
+      'source_tmpl': 'regex-2021.4.4-cp38-cp38-manylinux2014_x86_64.whl',
+        'checksums': ['ce15b6d103daff8e9fee13cf7f0add05245a05d866e73926c358e871221eae87'],
+    }),
+
+ #   ('huggingface_hub', '0.0.8', {
+ #     'source_tmpl': 'filelock-3.0.12-py3-none-any.whl',
+ #       'checksums': ['929b7d63ec5b7d6b71b0fa5ac14e030b3f70b75747cef1b10da9b879fef15836'],
+ #   }),
+
+    ('sacremoses', '0.0.45', {
+      'source_tmpl': 'sacremoses-0.0.45-py3-none-any.whl',
+        'checksums': ['fa93db44bc04542553ba6090818b892f603d02aa0d681e6c5c3023baf17e8564'],
+    }),
+  ('tokenizers', '0.10.3', {
+      'source_tmpl': 'tokenizers-0.10.3-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl',
+        'checksums': ['ae7e40d9c8a77c5a4109731ac3e21633b0c609c56a8b58be6b863da61fa54636'],
+    }),
+    ('joblib', '1.0.1', {
+      'source_tmpl': 'joblib-1.0.1-py3-none-any.whl',
+        'checksums': ['feeb1ec69c4d45129954f1b7034954241eedfd6ba39b5e9e4b6883be3332d5e5'],
+    }),
+     ('click', '8.0.1', {
+      'source_tmpl': 'click-8.0.1-py3-none-any.whl',
+        'checksums': ['fba402a4a47334742d782209a7c79bc448911afe1149d07bdabdf480b3e2f4b6'],
+    }),
+    ('six', '1.16.0', {
+      'source_tmpl': 'six-1.16.0-py2.py3-none-any.whl',
+        'checksums': ['8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254'],
+    }),
+    ('chardet', '4.0.0', {
+      'source_tmpl': 'chardet-4.0.0-py2.py3-none-any.whl',
+        'checksums': ['f864054d66fd9118f2e67044ac8981a54775ec5b67aed0441892edb553d21da5'],
+    }),
+    ('urllib3', '1.26.5', {
+      'source_tmpl': 'urllib3-1.26.5-py2.py3-none-any.whl',
+        'checksums': ['753a0374df26658f99d826cfe40394a686d05985786d946fbe4165b5148f5a7c'],
+    }),
+    ('idna', '2.10', {
+      'source_tmpl': 'idna-2.10-py2.py3-none-any.whl',
+        'checksums': ['b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0'],
+    }),
+    
+     ('certifi', '2021.5.30', {
+      'source_tmpl': 'certifi-2021.5.30-py2.py3-none-any.whl',
+        'checksums': ['50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8'],
+    }),
+     ('numpy', '1.17', {
+      'source_tmpl': 'numpy-1.20.3-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl',
+        'checksums': ['e515c9a93aebe27166ec9593411c58494fa98e5fcc219e47260d9ab8a1cc7f9f'],
+    }),
+    (name, version, {
+        'source_tmpl': 'transformers-4.5.1.tar.gz',
+        'checksums': ['3508e3b032cf0f5342c67836de4b121aa5c435c959472a28054ba895ea59cca7'],
+    }),
+]
+
+sanity_pip_check = True
+
+moduleclass = 'math'

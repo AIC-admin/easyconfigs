@@ -1,0 +1,37 @@
+#Author: Pavel Grochal (INUITS)
+# License: GPLv2
+
+easyblock = 'PythonPackage'
+
+name = 'matplotlib'
+version = '3.2.0'
+#versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://matplotlib.org/'
+description = """Python plotting package
+"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['651d76daf9168250370d4befb09f79875daa2224a9096d97dfc3ed764c842be4']
+
+builddependencies = [
+    ('binutils', '2.35'),
+    ('pkg-config', '0.29.2'),
+    ('pyparsing', '2.4.7'),
+]
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('pyparsing', '2.4.7'),
+    ('SciPy-bundle','2020.11'),
+    ('freetype','2.10.3')
+]
+
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'

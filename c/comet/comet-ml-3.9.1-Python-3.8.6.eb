@@ -1,0 +1,53 @@
+# Creator: Amr Magdy
+easyblock = 'PythonBundle'
+name = 'comet-ml'
+version = '3.9.1'
+homepage = 'https://www.comet.ml/site/'
+description = """Comet enables data scientists and teams to track, compare, explain and optimize experiments and models across the model’s entire lifecycle. From training to production. With just two lines of code, you can start building better models today."""
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+dependencies = [
+        ('Python', '3.8.6'),]
+use_pip = True
+#options = {'modulename': 'comet_ml'}
+sanity_pip_check=True
+#sanity_check_commands = [('python', '-c "import comet_ml"')]
+exts_list = [
+      ("configobj", "5.0.6", {
+          'sources': ['https://files.pythonhosted.org/packages/64/61/079eb60459c44929e684fa7d9e2fdca403f67d64dd9dbac27296be2e0fab/configobj-5.0.6.tar.gz'],
+          'checksums': ['a2f5650770e1c87fb335af19a9b7eb73fc05ccf22144eb68db7d00cd2bcb0902'],
+      }),
+     ("dulwich", "0.20.21", {
+         'sources': ['https://files.pythonhosted.org/packages/31/02/791c17b92e6d04c43f9b318c95a3f3c3e1ea718aa72ad95b9dac147895fa/dulwich-0.20.21.tar.gz'],
+         'checksums': ['ac764c9a9b80fa61afe3404d5270c5060aa57f7f087b11a95395d3b76f3b71fd'],
+     }),
+     ("everett", "1.0.3", {
+         'sources': ['https://files.pythonhosted.org/packages/8c/5c/865b70a39b97ddd25dc35ac6688f64f22f7add8af6c09cb0824c9dbd332a/everett-1.0.3.tar.gz'],
+         'checksums': ['2c4cb84700a122e5bbc82b1808c22e1f0c17af0c1e0c84711e0e43cb1f7b932d'],
+     }),
+     ("websocket-client", "1.0.0", {
+          'sources': ['https://files.pythonhosted.org/packages/97/ab/f45394f0db306bdcdf78e7922e942117731023e31f44f4dd8bdd926c2391/websocket-client-1.0.0.tar.gz'],
+          'modulename': 'websocket',
+          'checksums': ['5051b38a2f4c27fbd7ca077ebb23ec6965a626ded5a95637f36be1b35b6c4f81'],
+      }),
+        ("wrapt", "1.12.1", {
+          'sources': ['https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz'],
+          'checksums': ['b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7'],
+      }),
+        ("wurlitzer", "2.1.0", {
+           'sources': ['https://files.pythonhosted.org/packages/77/88/2775689c67bf78248161cdfd2111726d11f0fc78c6d015dc98ce1299f560/wurlitzer-2.1.0.tar.gz'],
+           'checksums': ['0144228960a992ef46e339e8aa560600bd34cd64e018bfebad88c0dd61bd8ba5'],
+       }),
+        ("nvidia-ml-py3", "7.352.0", {
+           'sources': ['https://files.pythonhosted.org/packages/6d/64/cce82bddb80c0b0f5c703bbdafa94bfb69a1c5ad7a79cff00b482468f0d3/nvidia-ml-py3-7.352.0.tar.gz'],
+           'modulename': 'pynvml',
+           'checksums': ['390f02919ee9d73fe63a98c73101061a6b37fa694a793abf56673320f1f51277'],
+       }),
+        (name, version, {
+         'sources': ['https://files.pythonhosted.org/packages/17/97/9f1e153f6b4df253f5eea38e51f9be34256bc8bf0d363d01a1ffc2d2d668/comet_ml-3.9.1.tar.gz'],
+         'modulename': 'comet_ml',
+         'checksums': ['f8236178a61a5c7dc66c544341350ce177536009f94610c4893321c3077ad8b2'],
+              }),
+
+]
+#sanity_pip_check=True
+moduleclass = 'tools'

@@ -1,0 +1,29 @@
+easyblock = 'PythonPackage'
+
+name = 'pyxdg'
+version = '0.25'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'http://freedesktop.org/wiki/Software/pyxdg'
+description = """  NO """
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+source_urls = [PYPI_LOWER_SOURCE]
+sources = ['%(name)s-%(version)s.tar.gz']
+checksums = ['81e883e0b9517d624e8b0499eb267b82a815c0b7146d5269f364988ae031279d']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+]
+
+options = {'modulename': 'xdg'}
+
+
+#download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+
+moduleclass = 'data'
+
