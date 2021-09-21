@@ -1,0 +1,32 @@
+easyblock = 'PythonPackage'
+
+name = 'stanza'
+version = '1.2.3'
+versionsuffix = '-Python-%(pyver)s'
+
+homepage = 'https://github.com/twisted'
+description = """Python NLP Library for Many Human Languages, by the Stanford NLP Group"""
+
+toolchain = {'name': 'fosscuda', 'version': '2020b'}
+
+sources= ['https://files.pythonhosted.org/packages/9a/c6/e6134a2ea408f8058a105fd7341329dd13b03fde7bfab2b9e2e18f164f18/stanza-1.2.3.tar.gz']
+checksums = ['6a27f1990f4981d982939198d5c872b93fd6e1858345a915e33f42fc50b3cf22']
+
+
+dependencies = [
+    ('Python', '3.8.6'),
+    ('tqdm','4.60.0'),
+    ('PyTorch','1.7.1'),
+    ('protobuf','3.14.0','',('GCCcore','10.2.0')),
+    ('SciPy-bundle','2020.11'),
+    ('setuptools','57.0.0')
+    
+
+    
+]
+download_dep_fail = True
+use_pip = True
+sanity_pip_check = True
+moduleclass = 'data'
+
+
